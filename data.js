@@ -131,6 +131,13 @@ function addIcon(name, color) {
 	document.getElementById("container").append(icon);
 }
 
+function addOption(type) {
+	const option = document.createElement("option");
+	option.setAttribute("value", type);
+	option.innerHTML=type;
+	document.querySelector("select#filter").append(option);
+}
+
 document.querySelector("select#filter").addEventListener("change", function () {
 	document.getElementById("container").innerHTML="";
 	switch (this.value) {
@@ -145,7 +152,6 @@ document.querySelector("select#filter").addEventListener("change", function () {
 					return true;
 				}
 			});
-			
 			animal.forEach((element) => { addIcon(element.name, element.color) })
 			break;
 		case "vegetable":
