@@ -1,0 +1,41 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#29b1ddff;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+div#filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    height: 3em;
+    gap: 5px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #ddddddff;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.name {
+    text-transform: uppercase;    
+}
