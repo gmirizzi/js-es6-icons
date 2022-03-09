@@ -1,3 +1,4 @@
+//ARRAYS
 const icons = [
 	{
 		name: 'cat',
@@ -113,6 +114,9 @@ const icons = [
 	}
 ];
 
+const arrTypes=[];
+
+//FUNCTION
 function getRandomColor() {
 	const letters = '0123456789ABCDEF';
 	let color = '#';
@@ -138,6 +142,7 @@ function addOption(type) {
 	document.querySelector("select#filter").append(option);
 }
 
+//Funzionalità al Select
 document.querySelector("select#filter").addEventListener("change", function () {
 	document.getElementById("container").innerHTML="";
 	switch (this.value) {
@@ -176,4 +181,14 @@ document.querySelector("select#filter").addEventListener("change", function () {
 			break;
 	}
 })
-icons.forEach((element) => {addIcon(element.name, element.color)})
+
+//Cicli per popolare l'HTML
+icons.forEach((element) => {
+	const type=element.type;
+	if (!arrTypes.includes(type)){
+		arrTypes.push(type)
+	}
+	addIcon(element.name, element.color)
+})
+
+arrTypes.forEach(element=>addOption(element))
