@@ -1,4 +1,4 @@
-[
+const icons=[
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,12 @@
 		color: 'blue'
 	}
 ];
+
+function addIcon(name,color){
+	const icon=document.createElement("div");
+	icon.classList.add("card");
+	icon.innerHTML=`
+	<i class="fa-solid fa-${name}" style="color:${color}"></i>
+	<div class="name">${name}</div>`
+	document.getElementById("container").append(icon);
+}

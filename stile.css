@@ -9,6 +9,10 @@
     --primary-color:#29b1ddff;
 }
 
+header {
+    padding: 0 1rem;
+}
+
 h1 {
     color: var(--primary-color);
 }
