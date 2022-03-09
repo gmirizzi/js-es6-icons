@@ -7,14 +7,19 @@
 
 :root{
     --primary-color:#29b1ddff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;   
+    background-color: #ddddddff;
 }
 
 header {
     padding: 0 1rem;
+    background-color: white;
 }
 
 h1 {
     color: var(--primary-color);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 div#filter {
@@ -29,9 +34,8 @@ div#filter {
 
 #container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    background-color: #ddddddff;
     padding: 1rem;
     gap: 3em;
 }
@@ -43,13 +47,14 @@ div#filter {
     padding: 1.5em;
     flex-basis: 200px;
     box-shadow: 2px 2px 2px #9f9f9fff;
+    margin-bottom: 4em;
 }
 
 .card i {
     font-size: 3em;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 
 .name {
-    text-transform: uppercase;    
+    text-transform: uppercase; 
 }

@@ -1,4 +1,4 @@
-const icons=[
+const icons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -113,13 +113,45 @@ const icons=[
 	}
 ];
 
-function addIcon(name,color){
-	const icon=document.createElement("div");
+function addIcon(name, color) {
+	const icon = document.createElement("div");
 	icon.classList.add("card");
-	icon.innerHTML=`
+	icon.innerHTML = `
 	<i class="fa-solid fa-${name}" style="color:${color}"></i>
 	<div class="name">${name}</div>`
 	document.getElementById("container").append(icon);
 }
 
-icons.forEach((element)=>{addIcon(element.name,element.color)})
+document.querySelector("select#filter").addEventListener("change", function () {
+	document.getElementById("container").innerHTML="";
+	switch (this.value) {
+		case "all":
+			icons.forEach((element) => { addIcon(element.name, element.color) })
+			break;
+		case "animal":
+			const animal = icons.filter(element => {
+				if (element.type == "animal") {
+					return true;
+				}
+			});
+			animal.forEach((element) => { addIcon(element.name, element.color) })
+			break;
+		case "vegetable":
+			const vegetable = icons.filter(element => {
+				if (element.type == "vegetable") {
+					return true;
+				}
+			});
+			vegetable.forEach((element) => { addIcon(element.name, element.color) })
+			break;
+		case "user":
+			const user = icons.filter(element => {
+				if (element.type == "user") {
+					return true;
+				}
+			});
+			user.forEach((element) => { addIcon(element.name, element.color) })
+			break;
+	}
+})
+icons.forEach((element) => { addIcon(element.name, element.color) })
