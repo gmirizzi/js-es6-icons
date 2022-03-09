@@ -121,3 +121,5 @@ function addIcon(name,color){
 	<div class="name">${name}</div>`
 	document.getElementById("container").append(icon);
 }
+
+icons.forEach((element)=>{addIcon(element.name,element.color)})

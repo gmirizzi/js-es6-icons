@@ -29,10 +29,11 @@ div#filter {
 
 #container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     background-color: #ddddddff;
     padding: 1rem;
+    gap: 3em;
 }
 
 .card {
