@@ -145,41 +145,18 @@ function addOption(type) {
 //Funzionalità al Select
 document.querySelector("select#filter").addEventListener("change", function () {
 	document.getElementById("container").innerHTML="";
-	switch (this.value) {
-		case "all":
+		if(this.value=="all") {
 			icons.forEach((element) => {addIcon(element.name, element.color) })
-			break;
-		case "animal":
+		} else {
 			randomColor=getRandomColor();
-			const animal = icons.filter(element => {
-				if (element.type == "animal") {
+			const arrFilter = icons.filter(element => {
+				if (element.type == this.value) {
 					element.color=randomColor;
 					return true;
 				}
 			});
-			animal.forEach((element) => { addIcon(element.name, element.color) })
-			break;
-		case "vegetable":
-			randomColor=getRandomColor();
-			const vegetable = icons.filter(element => {
-				if (element.type == "vegetable") {
-					element.color=randomColor;
-					return true;
-				}
-			});
-			vegetable.forEach((element) => { addIcon(element.name, element.color) })
-			break;
-		case "user":
-			randomColor=getRandomColor();
-			const user = icons.filter(element => {
-				if (element.type == "user") {
-					element.color=randomColor;
-					return true;
-				}
-			});
-			user.forEach((element) => { addIcon(element.name, element.color) })
-			break;
-	}
+			arrFilter.forEach((element) => { addIcon(element.name, element.color) })
+		}
 })
 
 //Cicli per popolare l'HTML
